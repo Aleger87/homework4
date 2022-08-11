@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Main {
@@ -57,15 +58,29 @@ public class Main {
 
         int flightComet = 0;
         int year = 200;
-        int date = 2022;
+        int date = LocalDate.now().getYear();
         int age = 79;
         for (;flightComet < date; flightComet += age){
             if (flightComet > date - year ) {
                 System.out.println(flightComet);
             }
         }
-        flightComet += age;
+
         System.out.println(flightComet);
+
+        //правильный вариант
+
+        int dateNow = LocalDate.now().getYear();
+
+        int start = dateNow - 200;
+        int stop = dateNow + 100;
+
+        for (int yearTwo = start; yearTwo <= stop; yearTwo++){
+            if (yearTwo % 79 == 0){
+                System.out.println(yearTwo);
+            }
+        }
+
 
     }
 }
